@@ -1,9 +1,9 @@
 import requests
 import os
 import sys
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 def luogu_punch():
     # ---------------------------------------------------------
@@ -66,4 +66,5 @@ def luogu_punch():
         print(f"❌ 发生异常: {e}")
 
 if __name__ == "__main__":
+
     luogu_punch()
