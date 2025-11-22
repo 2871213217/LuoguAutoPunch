@@ -85,6 +85,11 @@ jobs:
         name: punch-log
         path: log.txt
         retention-days: 7
+    
+    # 补充：时间获取。
+    - name: Get Current Date
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
 
     # 第七步：发送邮件 (整合了 PR 的功能，感谢贡献)
     - name: Send Email
@@ -105,7 +110,7 @@ jobs:
         body: |
           自动打卡任务执行报告
           
-          运行时间: $(date "+%Y-%m-%d %H:%M:%S")
+          运行时间: ${{ steps.date.outputs.date }}
           
           详细日志：
           --------------------------------------------------
